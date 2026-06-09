@@ -1,52 +1,52 @@
 spring:
-application:
-name: care_bridge
+  application:
+    name: care_bridge
 
-# PostgreSQL Database Connection Settings
-datasource:
-url: ${DB_URL:jdbc:postgresql://tramway.proxy.rlwy.net:32237/railway}
-username: ${DB_USERNAME:postgres}
-password: ${DB_PASSWORD:CsWcCSMTTLCVkXCamsDlsFyQbbgFKIsz}
+  # PostgreSQL Database Connection Settings
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://tramway.proxy.rlwy.net:32237/railway}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:CsWcCSMTTLCVkXCamsDlsFyQbbgFKIsz}
 
-# Hibernate Properties
-jpa:
-database-platform: org.hibernate.dialect.PostgreSQLDialect
-hibernate:
-ddl-auto: update
-show-sql: true
+  # Hibernate Properties
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
-# Spring Boot Mail (Gmail SMTP)
-mail:
-host: smtp.gmail.com
-port: 587
-username: ${MAIL_USERNAME:intoucarebridge@gmail.com}
-password: ${MAIL_PASSWORD:u2Q02NJxak9vn184CPAe}
-properties:
-mail:
-smtp:
-auth: true
-starttls:
-enable: true
+  # Spring Boot Mail (Gmail SMTP)
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:intoucarebridge@gmail.com}
+    password: ${MAIL_PASSWORD:u2Q02NJxak9vn184CPAe}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
 
-# Security Manual Token Context Controls
-security:
-user:
-name: disabled
-autoconfigure:
-exclude: org.springframework.boot.security.autoconfigure.UserDetailsServiceAutoConfiguration
+  # Security Configuration
+  security:
+    user:
+      name: disabled
+  autoconfigure:
+    exclude: org.springframework.boot.security.autoconfigure.UserDetailsServiceAutoConfiguration
 
-# Custom Application Properties
+# Custom Application Properties (Kept outside of the 'spring:' namespace)
 stripe:
-api:
-secret-key: ${STRIPE_SECRET_KEY:sk_test_51Tczl8HgZtkdyzYLveKsW4ZUuM5fCAIYUWMcfsMHHxtRUGdPVh9NWRtw0WPEhtn3RfIys2n4jISH7Abp6oVxl3uE00zOZFP4RY}
+  api:
+    secret-key: ${STRIPE_SECRET_KEY:sk_test_51Tczl8HgZtkdyzYLveKsW4ZUuM5fCAIYUWMcfsMHHxtRUGdPVh9NWRtw0WPEhtn3RfIys2n4jISH7Abp6oVxl3uE00zOZFP4RY}
 
 google:
-calendar:
-credentials:
-path: classpath:service-account-key.json
-client:
-email: carebridge@carebridge-497909.iam.gserviceaccount.com
+  calendar:
+    credentials:
+      path: classpath:service-account-key.json
+    client:
+      email: carebridge@carebridge-497909.iam.gserviceaccount.com
 
 payhere:
-merchant-id: 1236193
-merchant-secret: ${PAYHERE_SECRET:MzgyNzMxNjIyNzI1MzY1MTkwODU4NTczOTI2MjgxODEwODUwMjcx}
+  merchant-id: 1236193
+  merchant-secret: ${PAYHERE_SECRET:MzgyNzMxNjIyNzI1MzY1MTkwODU4NTczOTI2MjgxODEwODUwMjcx}
