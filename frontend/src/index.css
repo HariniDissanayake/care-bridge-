@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #243d3d;
+  background: #f8f8f6;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button, input {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #c6d4d2;
+  border-radius: 999px;
+}
+
+.carebridge-sans {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo-font {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.soft-shadow {
+  box-shadow: 0 8px 20px rgba(45, 76, 77, 0.08);
+}
+
+.message-shadow {
+  box-shadow: 0 8px 18px rgba(48, 76, 78, 0.08);
+}
+
+.robot-glow {
+  box-shadow:
+    0 0 0 5px rgba(255,255,255,.8),
+    0 8px 25px rgba(31, 112, 112, .20),
+    inset 0 0 18px rgba(255,255,255,.30);
+}
+
+@media (max-width: 850px) {
+  .sidebar {
+    width: 130px !important;
+  }
+  .mood-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 680px) {
+  .sidebar {
+    display: none;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-title {
+    display: block !important;
+  }
+}
